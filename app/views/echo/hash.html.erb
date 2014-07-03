@@ -5,7 +5,7 @@
     <p>Make the category checkboxes come through as a hash in <code>params[:organization][:categories]</code></p>
 
     <p>
-      <%= content_tag(:code, { 'organization' => { 'categories' => { "Automotive" => "1", "Education" => "1", "Finance" => "1"}}}) %>
+      <%= content_tag(:code, {'organization' => {'categories' => {"Automotive" => "1", "Education" => "1", "Finance" => "1"}}}) %>
     </p>
   </div>
 
@@ -20,7 +20,7 @@
       <% %w(Automotive Technology Education Science Finance Pharmaceutical).each_with_index do |category, index| %>
         <label class="checkbox">
           <!-- BEGIN CHANGES -->
-          <input type="checkbox" <%= index.even? ? "checked" : nil %> />
+          <input type="checkbox" name="organization[categories][<%= category %>]" value="1" <%= index.even? ? "checked" : nil %>  />
           <!-- END CHANGES -->
           <%= category %>
         </label>

@@ -7,8 +7,9 @@
     </p>
 
     <strong>Expected <code>params</code></strong>
+
     <p>
-      <%= content_tag(:code, { 'organization' => { 'categories' => %w(Automotive Education Finance) } }) %>
+      <%= content_tag(:code, {'organization' => {'categories' => %w(Automotive Education Finance)}}) %>
     </p>
   </div>
 
@@ -24,7 +25,7 @@
         <label class="checkbox">
 
           <!-- BEGIN CHANGES -->
-          <input type="checkbox" <%= index.even? ? "checked" : nil %> />
+          <input type="checkbox" name="organization[categories][]" value="<%= category %>" <%= index.even? ? "checked" : nil %> />
           <!-- END CHANGES -->
 
           <%= category %>
